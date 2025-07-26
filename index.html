@@ -32,6 +32,12 @@
         }
         .testimonial-carousel {
             scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .testimonial-carousel::-webkit-scrollbar {
+            display: none;
         }
         .testimonial-slide {
             scroll-snap-align: start;
@@ -643,14 +649,9 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <p class="text-gray-700 mb-4">
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
                                 "Comprei meu apartamento por 80% do valor de mercado através do consórcio. As parcelas cabiam no meu orçamento e não precisei pagar juros absurdos como no financiamento."
                             </p>
-                            <div class="flex justify-center">
-                                <div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-play text-primary text-2xl"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -673,14 +674,9 @@
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
                             </div>
-                            <p class="text-gray-700 mb-4">
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
                                 "Consegui meu HB20 0km em apenas 18 meses dando lances. A equipe me orientou sobre como aumentar minhas chances de contemplação. Hoje tenho meu carro sem me endividar."
                             </p>
-                            <div class="flex justify-center">
-                                <div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-play text-primary text-2xl"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -703,23 +699,143 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <p class="text-gray-700 mb-4">
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
                                 "Reformei toda minha casa usando o consórcio de serviços. Pude planejar cada etapa e pagar em parcelas fixas. O processo foi transparente e sem surpresas."
                             </p>
-                            <div class="flex justify-center">
-                                <div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-play text-primary text-2xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Juliana" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Juliana Santos</h4>
+                                    <p class="text-sm text-gray-600">Contemplada em 2022</p>
                                 </div>
                             </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
+                                "Adquiri meu primeiro apartamento através do consórcio. Em 24 meses fui contemplada e pude comprar um imóvel melhor do que imaginava, sem precisar de entrada."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Marcos" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Marcos Oliveira</h4>
+                                    <p class="text-sm text-gray-600">Contemplado em 2023</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
+                                "Comprei uma Hilux 0km dando um lance de 15%. O atendimento foi excelente e me orientaram sobre o valor ideal do lance para ser contemplado rapidamente."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Fernanda" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Fernanda Costa</h4>
+                                    <p class="text-sm text-gray-600">Contemplada em 2021</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
+                                "Fiz o consórcio para a formatura da minha filha e foi perfeito! Paguei em parcelas e não precisei me endividar no cartão. Super recomendo para quem quer planejar eventos."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Ricardo" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Ricardo Mendes</h4>
+                                    <p class="text-sm text-gray-600">Contemplado em 2022</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
+                                "Adquiri um terreno para construir minha casa. O consórcio me permitiu comprar à vista com desconto e ainda parcelar em prazos que cabiam no meu orçamento."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Patrícia" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Patrícia Rocha</h4>
+                                    <p class="text-sm text-gray-600">Contemplada em 2023</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center whitespace-normal">
+                                "Usei o consórcio de serviços para reformar meu consultório médico. Pude equipá-lo com os melhores aparelhos sem comprometer meu fluxo de caixa."
+                            </p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Navigation Arrows -->
-                <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 -ml-4 hidden md:block">
+                <button id="testimonial-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 -ml-2 md:-ml-4">
                     <i class="fas fa-chevron-left text-primary"></i>
                 </button>
-                <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 -mr-4 hidden md:block">
+                <button id="testimonial-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 -mr-2 md:-mr-4">
                     <i class="fas fa-chevron-right text-primary"></i>
                 </button>
             </div>
@@ -1141,13 +1257,96 @@
         rangeValue.textContent = initialValue;
 
         // Testimonial Carousel Navigation
-        // Note: For a production site, consider using a library like Swiper.js for better carousel functionality
         const carousel = document.querySelector('.testimonial-carousel');
-        const prevButton = document.createElement('button');
-        const nextButton = document.createElement('button');
+        const prevButton = document.getElementById('testimonial-prev');
+        const nextButton = document.getElementById('testimonial-next');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        let currentIndex = 0;
+        let autoScrollInterval;
         
-        // You would implement the carousel navigation logic here
-        // This is a simplified version for demonstration
+        // Calculate slide width including margin
+        const slideStyle = window.getComputedStyle(slides[0]);
+        const slideMarginRight = parseFloat(slideStyle.marginRight);
+        const slideWidth = slides[0].offsetWidth + slideMarginRight;
+        
+        // Set initial position
+        carousel.scrollLeft = 0;
+        
+        // Function to scroll to specific slide
+        function scrollToSlide(index) {
+            currentIndex = index;
+            carousel.scrollLeft = currentIndex * slideWidth;
+            updateButtons();
+        }
+        
+        // Function to update button states
+        function updateButtons() {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            const tolerance = 5;
+            
+            // Disable prev button if at start
+            if (carousel.scrollLeft <= tolerance) {
+                prevButton.classList.add('opacity-50', 'cursor-not-allowed');
+                prevButton.disabled = true;
+            } else {
+                prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                prevButton.disabled = false;
+            }
+            
+            // Disable next button if at end
+            if (carousel.scrollLeft >= maxScroll - tolerance) {
+                nextButton.classList.add('opacity-50', 'cursor-not-allowed');
+                nextButton.disabled = true;
+            } else {
+                nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                nextButton.disabled = false;
+            }
+        }
+        
+        // Previous button click handler
+        prevButton.addEventListener('click', () => {
+            stopAutoScroll();
+            if (currentIndex > 0) {
+                scrollToSlide(currentIndex - 1);
+            }
+            startAutoScroll();
+        });
+        
+        // Next button click handler
+        nextButton.addEventListener('click', () => {
+            stopAutoScroll();
+            if (currentIndex < slides.length - 1) {
+                scrollToSlide(currentIndex + 1);
+            }
+            startAutoScroll();
+        });
+        
+        // Auto-scroll functionality
+        function startAutoScroll() {
+            stopAutoScroll();
+            autoScrollInterval = setInterval(() => {
+                if (currentIndex < slides.length - 1) {
+                    scrollToSlide(currentIndex + 1);
+                } else {
+                    scrollToSlide(0); // Loop back to first slide
+                }
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+        
+        // Pause auto-scroll when mouse enters carousel
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+        
+        // Update buttons state based on scroll position
+        carousel.addEventListener('scroll', updateButtons);
+
+        // Initialize buttons state and start auto-scroll
+        updateButtons();
+        startAutoScroll();
     </script>
 </body>
 </html>
