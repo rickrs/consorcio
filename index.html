@@ -885,7 +885,7 @@
                     <button class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300">
                         Quero uma proposta <i class="fas fa-arrow-right ml-2"></i>
                     </button>
-                    <button class="bg-green-600 hover:bg-green-700 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <button data-action="open-chatbot" class="bg-green-600 hover:bg-green-700 font-bold py-3 px-6 rounded-lg transition duration-300">
                         Falar com especialista <i class="fab fa-whatsapp ml-2"></i>
                     </button>
                 </div>
@@ -1165,6 +1165,16 @@
         </a>
     </div>
 
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl h-[80vh] relative">
+            <button id="close-chatbot" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div id="chatbot-container" class="h-full w-full p-4"></div>
+        </div>
+    </div>
+
     <!-- E-book Offer -->
     <div class="fixed bottom-6 left-6 z-50 hidden md:block">
         <div class="bg-white rounded-xl shadow-xl overflow-hidden max-w-xs">
@@ -1347,6 +1357,46 @@
         // Initialize buttons state and start auto-scroll
         updateButtons();
         startAutoScroll();
+
+        // Chatbot Modal Functionality
+        const chatbotModal = document.getElementById('chatbot-modal');
+        const closeChatbot = document.getElementById('close-chatbot');
+        const chatbotButtons = document.querySelectorAll('[data-action="open-chatbot"]');
+
+        function openChatbot() {
+            chatbotModal.classList.remove('hidden');
+            // Load chatbot script dynamically
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.innerHTML = `
+                import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+                Chatbot.init({
+                    chatflowid: "578e8804-3060-4049-912e-c51ec184e042",
+                    apiHost: "http://31.97.92.38:3000",
+                })
+            `;
+            document.getElementById('chatbot-container').appendChild(script);
+        }
+
+        function closeChatbotModal() {
+            chatbotModal.classList.add('hidden');
+            // Clear chatbot container when closing
+            document.getElementById('chatbot-container').innerHTML = '';
+        }
+
+        // Add event listeners to all chatbot buttons
+        chatbotButtons.forEach(button => {
+            button.addEventListener('click', openChatbot);
+        });
+
+        closeChatbot.addEventListener('click', closeChatbotModal);
+
+        // Close modal when clicking outside
+        chatbotModal.addEventListener('click', (e) => {
+            if (e.target === chatbotModal) {
+                closeChatbotModal();
+            }
+        });
     </script>
 </body>
 </html>
