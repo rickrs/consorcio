@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consórcio Inteligente - Realize Seu Sonho Sem Juros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .testimonial-carousel {
+            scroll-snap-type: x mandatory;
+        }
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+        .input-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            outline: none;
+        }
+        .input-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+        }
+        .input-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+        }
+        .floating-whatsapp {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mr-2">CI</div>
+                <span class="text-xl font-bold text-primary">Consórcio<span class="text-secondary">Inteligente</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="font-medium hover:text-primary transition">Início</a>
+                <a href="#vantagens" class="font-medium hover:text-primary transition">Vantagens</a>
+                <a href="#jornada" class="font-medium hover:text-primary transition">Como Funciona</a>
+                <a href="#tipos" class="font-medium hover:text-primary transition">Planos</a>
+                <a href="#depoimentos" class="font-medium hover:text-primary transition">Depoimentos</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#hero" class="font-medium hover:text-primary transition py-2">Início</a>
+                <a href="#vantagens" class="font-medium hover:text-primary transition py-2">Vantagens</a>
+                <a href="#jornada" class="font-medium hover:text-primary transition py-2">Como Funciona</a>
+                <a href="#tipos" class="font-medium hover:text-primary transition py-2">Planos</a>
+                <a href="#depoimentos" class="font-medium hover:text-primary transition py-2">Depoimentos</a>
+                <a href="#contato" class="bg-primary text-white rounded-lg py-2 px-4 text-center font-medium hover:bg-blue-700 transition">Simular Agora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-gradient-to-r from-blue-50 to-green-50 py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                <div class="flex items-center mb-4">
+                    <div class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full mr-3">NOVO</div>
+                    <span class="text-sm text-gray-600">Grupo com contemplação garantida</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                    Adquira seu carro, imóvel ou serviço <span class="text-primary">SEM JUROS</span> e <span class="text-secondary">SEM ENTRADA</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Parcelas fixas que cabem no seu bolso | Contemplação garantida | Grupo com vagas limitadas
+                </p>
+                
+                <!-- Calculator -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Simule seu consórcio agora</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de consórcio</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                <option>Carro</option>
+                                <option>Imóvel</option>
+                                <option>Serviços</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Valor desejado</label>
+                            <input type="text" placeholder="R$ 50.000" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Prazo (meses)</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                <option>24 meses</option>
+                                <option>36 meses</option>
+                                <option>48 meses</option>
+                                <option>60 meses</option>
+                            </select>
+                        </div>
+                        <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Calcular Parcelas <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 p-2 rounded-full mr-2">
+                            <i class="fas fa-check-circle text-secondary"></i>
+                        </div>
+                        <span class="text-sm">Credenciado BACEN</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-2 rounded-full mr-2">
+                            <i class="fas fa-users text-primary"></i>
+                        </div>
+                        <span class="text-sm">+15.000 contemplados</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Família feliz com casa e carro novos" class="rounded-xl shadow-xl w-full">
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg hidden md:block">
+                    <div class="text-sm text-gray-500">Taxa média de</div>
+                    <div class="text-3xl font-bold text-primary">8.7%</div>
+                    <div class="text-sm text-gray-500">de contemplação/mês</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="bg-primary text-white py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-3 md:mb-0">
+                    <div class="bg-white text-primary rounded-full px-3 py-1 font-bold mr-3 animate-pulse">ÚLTIMAS VAGAS</div>
+                    <span>Últimas 12 vagas para grupo com sorteio em Nov/2024</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-xl mr-2"></i>
+                        <span>Faltam <span class="font-bold">3 dias</span> para fechamento</span>
+                    </div>
+                    <div class="hidden md:flex items-center">
+                        <i class="fas fa-undo text-xl mr-2"></i>
+                        <span>7 dias para arrependimento</span>
+                    </div>
+                    <div class="hidden md:flex items-center">
+                        <i class="fas fa-badge-percent text-xl mr-2"></i>
+                        <span>Sem taxa de adesão</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens vs Financiamento -->
+    <section id="vantagens" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Por que consórcio é <span class="text-secondary">+ inteligente</span> que financiamento?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Compare as principais diferenças e veja como você pode economizar milhares de reais</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-xl overflow-hidden shadow-lg">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Benefício</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-secondary uppercase tracking-wider">Consórcio</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Financiamento</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Taxa de juros</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary font-bold">0%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.2%~2.5% ao mês</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Entrada mínima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary font-bold">Não</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">20%~30%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Reajuste</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary font-bold">IPCA</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">TR + Spread</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Seguros obrigatórios</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary font-bold">Não</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sim</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Taxa de avaliação</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary font-bold">Não</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Até 2% do valor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-12 bg-blue-50 rounded-xl p-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Economize até R$ 48.000 em um carro de R$ 100.000</h3>
+                        <p class="text-gray-600">Veja como o consórcio pode ser a melhor opção para adquirir seu bem sem pagar juros abusivos</p>
+                    </div>
+                    <div class="md:w-1/3 text-center">
+                        <button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Simular Economia <i class="fas fa-calculator ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jornada do Cliente -->
+    <section id="jornada" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Como realizar seu sonho em <span class="text-primary">4 passos</span>:</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Um processo simples e transparente do início até a contemplação</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Escolha</h3>
+                    <p class="text-gray-600">Selecione seu bem e valor da carta de crédito que melhor atende suas necessidades</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Adesão</h3>
+                    <p class="text-gray-600">Entre no grupo com parcelas fixas que cabem no seu orçamento mensal</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Acumulação</h3>
+                    <p class="text-gray-600">Junte créditos enquanto paga suas parcelas mensais</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Contemplação</h3>
+                    <p class="text-gray-600">Use seu crédito quando for sorteado ou dê lances para antecipar</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Dúvida sobre como funciona?</h3>
+                        <p class="text-gray-600 mb-6">Nossos especialistas estão prontos para te explicar todo o processo sem compromisso</p>
+                        <button class="bg-secondary hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Falar com Especialista <i class="fas fa-headset ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-100 flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Atendente ajudando cliente" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Consórcio -->
+    <section id="tipos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Conheça nossos <span class="text-primary">planos</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Escolha o consórcio que melhor se adapta ao seu sonho e orçamento</p>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button type="button" data-tab="automoveis" class="tab-button px-6 py-3 text-sm font-medium rounded-l-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary active">Automóveis</button>
+                    <button type="button" data-tab="imoveis" class="tab-button px-6 py-3 text-sm font-medium border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">Imóveis</button>
+                    <button type="button" data-tab="servicos" class="tab-button px-6 py-3 text-sm font-medium rounded-r-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">Serviços</button>
+                </div>
+            </div>
+            
+            <!-- Tab Content -->
+            <div class="tab-content active" id="automoveis">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Car 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Carro popular" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Carros Populares</h3>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Mais Procurado</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 30k ~ R$ 80k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">HB20, Onix, Argo, Mobi</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 500/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 70% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Car 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Carro médio" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Carros Médios</h3>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 80k ~ R$ 150k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Corolla, Civic, Compass, T-Cross</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 1.200/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 65% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Car 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Carro luxo" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Carros de Luxo</h3>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 150k ~ R$ 300k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">BMW, Mercedes, Audi, Land Rover</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 2.500/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 60% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="imoveis">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Property 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Apartamento" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Apartamentos</h3>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 200k ~ R$ 500k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Studio, 1-3 quartos, cobertura</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 800/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 50% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1582268611958-691fd16117d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Casa" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Casas</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Novo</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 300k ~ R$ 1MM</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Padrão, sobrado, geminada</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 1.200/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 45% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Terreno" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Terrenos</h3>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 100k ~ R$ 300k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Urbanos, rurais, loteamento</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 500/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 55% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="servicos">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Reforma" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Reformas</h3>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 20k ~ R$ 100k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Cozinha, banheiro, elétrica, hidráulica</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 300/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 60% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Viagem" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Viagens</h3>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Promoção</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 10k ~ R$ 50k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Nacionais, internacionais, cruzeiros</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 200/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 70% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Educação" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Educação</h3>
+                            <p class="text-gray-600 mb-4">Faixa de valores: R$ 15k ~ R$ 80k</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Graduação, pós, MBA, intercâmbio</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Parcelas a partir de R$ 250/mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-secondary mr-2"></i>
+                                    <span class="text-sm">Grupos com 65% de contemplação</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Ver Cartas Disponíveis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section id="depoimentos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Quem realizou o sonho <span class="text-primary">recomenda</span>:</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Veja o que nossos clientes têm a dizer sobre a experiência com nossos consórcios</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Testimonials Carousel -->
+                <div class="testimonial-carousel overflow-x-auto whitespace-nowrap scroll-smooth pb-8" style="scrollbar-width: none;">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Carlos Silva</h4>
+                                    <p class="text-sm text-gray-600">Contemplado em 2023</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                "Comprei meu apartamento por 80% do valor de mercado através do consórcio. As parcelas cabiam no meu orçamento e não precisei pagar juros absurdos como no financiamento."
+                            </p>
+                            <div class="flex justify-center">
+                                <div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-play text-primary text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Ana Paula</h4>
+                                    <p class="text-sm text-gray-600">Contemplada em 2022</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                "Consegui meu HB20 0km em apenas 18 meses dando lances. A equipe me orientou sobre como aumentar minhas chances de contemplação. Hoje tenho meu carro sem me endividar."
+                            </p>
+                            <div class="flex justify-center">
+                                <div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-play text-primary text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide inline-block w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Roberto" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Roberto Almeida</h4>
+                                    <p class="text-sm text-gray-600">Contemplado em 2021</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                "Reformei toda minha casa usando o consórcio de serviços. Pude planejar cada etapa e pagar em parcelas fixas. O processo foi transparente e sem surpresas."
+                            </p>
+                            <div class="flex justify-center">
+                                <div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-play text-primary text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 -ml-4 hidden md:block">
+                    <i class="fas fa-chevron-left text-primary"></i>
+                </button>
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 -mr-4 hidden md:block">
+                    <i class="fas fa-chevron-right text-primary"></i>
+                </button>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/100x50?text=Reclame+Aqui" alt="Reclame Aqui" class="h-12">
+                    <div class="ml-3">
+                        <div class="text-2xl font-bold text-gray-900">4.9</div>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/100x50?text=BACEN" alt="BACEN" class="h-12">
+                    <div class="ml-3">
+                        <div class="font-medium text-gray-900">Credenciado</div>
+                        <div class="text-sm text-gray-600">Registro nº 12345</div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/100x50?text=LGPD" alt="LGPD" class="h-12">
+                    <div class="ml-3">
+                        <div class="font-medium text-gray-900">Dados Protegidos</div>
+                        <div class="text-sm text-gray-600">Conformidade com LGPD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Intermediário -->
+    <section class="py-12 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex justify-center mb-6">
+                    <div class="bg-yellow-500 text-yellow-900 px-4 py-1 rounded-full font-bold text-sm animate-bounce">⚠️ ÚLTIMAS VAGAS</div>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Grupo com 70% já contemplados! Não perca essa oportunidade</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Quero uma proposta <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="bg-green-600 hover:bg-green-700 font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Falar com especialista <i class="fab fa-whatsapp ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Tire suas <span class="text-primary">dúvidas</span>:</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">As perguntas mais frequentes sobre consórcios respondidas por nossos especialistas</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="font-medium text-gray-900">E se eu não for contemplado?</span>
+                        <i class="fas fa-plus text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 py-4 hidden">
+                        <p class="text-gray-600">
+                            Mesmo que você não seja contemplado durante o prazo do grupo, ao final do período você recebe de volta todo o valor pago, corrigido pela inflação. Além disso, você pode migrar para um novo grupo sem perder seus créditos acumulados.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="font-medium text-gray-900">Posso dar lances para antecipar?</span>
+                        <i class="fas fa-plus text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 py-4 hidden">
+                        <p class="text-gray-600">
+                            Sim! O lance é uma das grandes vantagens do consórcio. Você pode oferecer um desconto sobre o valor da carta para ser contemplado antes. Nossos especialistas podem te orientar sobre estratégias de lances para aumentar suas chances.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="font-medium text-gray-900">Como me protejo da inflação?</span>
+                        <i class="fas fa-plus text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 py-4 hidden">
+                        <p class="text-gray-600">
+                            Seu crédito é corrigido pelo mesmo índice que suas parcelas (geralmente IPCA ou INCC), mantendo o poder de compra ao longo do tempo. Isso é muito diferente de um financiamento, onde os juros são calculados sobre um valor nominal fixo.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="font-medium text-gray-900">Quanto tempo até primeira contemplação?</span>
+                        <i class="fas fa-plus text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 py-4 hidden">
+                        <p class="text-gray-600">
+                            A média de contemplação em nossos grupos é de 8-12 meses para veículos e 18-24 meses para imóveis. Grupos com parcelas mais altas tendem a ter contemplação mais rápida. Nossos consultores podem indicar os grupos com melhor relação prazo/taxa.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="font-medium text-gray-900">Posso usar meu FGTS para o consórcio?</span>
+                        <i class="fas fa-plus text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 py-4 hidden">
+                        <p class="text-gray-600">
+                            Sim, para imóveis você pode usar o saldo do FGTS para pagar parcelas ou dar lances após ser contemplado. É uma ótima forma de complementar seu crédito sem comprometer sua renda mensal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Não encontrou sua dúvida? Nossos especialistas estão prontos para ajudar.</p>
+                <button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Falar com Consultor <i class="fas fa-headset ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Captura -->
+    <section id="contato" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Garanta sua vaga com condições exclusivas!</h2>
+                        <p class="text-gray-600 mb-6">Preencha o formulário e um consultor especializado entrará em contato para apresentar as melhores opções para seu perfil.</p>
+                        
+                        <form class="space-y-4">
+                            <!-- Dream Type -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Qual seu sonho?</label>
+                                <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option value="">Selecione uma opção</option>
+                                    <option>Carro</option>
+                                    <option>Imóvel</option>
+                                    <option>Serviços</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Approximate Value -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Valor aproximado</label>
+                                <input type="range" min="50000" max="1000000" step="10000" value="250000" class="input-range mb-2">
+                                <div class="flex justify-between text-sm text-gray-600">
+                                    <span>R$ 50k</span>
+                                    <span id="range-value">R$ 250k</span>
+                                    <span>R$ 1MM</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Full Name -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Digite seu nome completo">
+                            </div>
+                            
+                            <!-- WhatsApp -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="(00) 00000-0000">
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Enviar Solicitação <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                            
+                            <!-- Trust Elements -->
+                            <div class="flex items-center justify-center mt-4">
+                                <i class="fas fa-lock text-gray-500 mr-2"></i>
+                                <span class="text-sm text-gray-500">Seus dados estão protegidos</span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="md:w-1/2 bg-primary text-white p-8 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold mb-4">Por que se cadastrar agora?</h3>
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start">
+                                <div class="bg-white text-primary rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Condições especiais para os primeiros 20 cadastros deste mês</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-white text-primary rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Análise personalizada sem compromisso</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-white text-primary rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Atendimento prioritário para cadastrados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-white text-primary rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <span>Material exclusivo sobre estratégias de contemplação</span>
+                            </li>
+                        </ul>
+                        <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Consultora" class="w-12 h-12 rounded-full mr-3">
+                                <div>
+                                    <div class="font-bold">Ana Carolina</div>
+                                    <div class="text-sm opacity-80">Consultora de Consórcios</div>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm italic">
+                                "Nossa equipe está pronta para te ajudar a encontrar o plano perfeito para realizar seu sonho sem comprometer seu orçamento."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between mb-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mr-2">CI</div>
+                        <span class="text-xl font-bold">Consórcio<span class="text-secondary">Inteligente</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        Ajudando brasileiros a realizar seus sonhos de forma inteligente e sem juros desde 2010.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Institucional</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Trabalhe Conosco</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Uso</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Ajuda</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Dúvidas Frequentes</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contemplados</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Carta de Crédito</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Como Dar Lances</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Contato</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-gray-400 mr-2"></i>
+                                <span class="text-gray-400">0800 123 4567</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                                <span class="text-gray-400">contato@consorciointeligente.com.br</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                <span class="text-gray-400">Av. Paulista, 1000 - São Paulo/SP</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400 text-sm">
+                        © 2023 Consórcio Inteligente. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#" class="floating-whatsapp bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-700 transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- E-book Offer -->
+    <div class="fixed bottom-6 left-6 z-50 hidden md:block">
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden max-w-xs">
+            <div class="bg-primary text-white p-3 text-center font-bold">
+                <i class="fas fa-gift mr-2"></i> Oferta Especial
+            </div>
+            <div class="p-4">
+                <h4 class="font-bold text-gray-900 mb-2">Baixe nosso e-book grátis:</h4>
+                <p class="text-sm text-gray-600 mb-3">"Como ser contemplado 2x mais rápido"</p>
+                <button class="w-full bg-secondary hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                    Quero meu e-book <i class="fas fa-download ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Tab Functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('bg-white');
+                    btn.classList.remove('bg-primary', 'text-white');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('bg-white');
+                this.classList.add('bg-primary', 'text-white');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the selected tab content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Toggle answer
+                answer.classList.toggle('hidden');
+                
+                // Toggle icon
+                if (icon.classList.contains('fa-plus')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
+
+        // Range Input Value Display
+        const rangeInput = document.querySelector('.input-range');
+        const rangeValue = document.getElementById('range-value');
+        
+        rangeInput.addEventListener('input', function() {
+            const value = parseInt(this.value).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+                minimumFractionDigits: 0
+            });
+            rangeValue.textContent = value;
+        });
+
+        // Initialize range value on load
+        const initialValue = parseInt(rangeInput.value).toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+            minimumFractionDigits: 0
+        });
+        rangeValue.textContent = initialValue;
+
+        // Testimonial Carousel Navigation
+        // Note: For a production site, consider using a library like Swiper.js for better carousel functionality
+        const carousel = document.querySelector('.testimonial-carousel');
+        const prevButton = document.createElement('button');
+        const nextButton = document.createElement('button');
+        
+        // You would implement the carousel navigation logic here
+        // This is a simplified version for demonstration
+    </script>
+</body>
+</html>
